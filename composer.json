@@ -7,10 +7,12 @@
     "require": {
         "php": "^8.1",
         "filament/filament": "^2.0",
+        "flowframe/laravel-trend": "^0.1.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "leandrocfe/filament-apex-charts": "2.0",
         "pxlrbt/filament-excel": "^1.0"
     },
     "require-dev": {

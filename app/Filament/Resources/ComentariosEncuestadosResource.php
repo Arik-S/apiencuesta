@@ -33,7 +33,12 @@ class ComentariosEncuestadosResource extends Resource
                 //
             ]);
     }
-
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->select(['id', 'nombre_contacto', 'comentarios'])
+            ->where('comentarios', '!=', null);
+    }
     public static function table(Table $table): Table
     {
         return $table
@@ -59,11 +64,11 @@ class ComentariosEncuestadosResource extends Resource
                 ExportBulkAction::make()
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageComentariosEncuestados::route('/'),
         ];
-    }    
+    }
 }

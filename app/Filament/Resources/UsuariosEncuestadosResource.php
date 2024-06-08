@@ -29,6 +29,13 @@ class UsuariosEncuestadosResource extends Resource
             ]);
     }
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->select(['id', 'nombre_contacto', 'contacto'])
+            ->where('nombre_contacto', '!=', null);
+    }
+
     public static function table(Table $table): Table
     {
         return $table
@@ -54,11 +61,11 @@ class UsuariosEncuestadosResource extends Resource
                 ExportBulkAction::make()
             ]);
     }
-    
+
     public static function getPages(): array
     {
         return [
             'index' => Pages\ManageUsuariosEncuestados::route('/'),
         ];
-    }    
+    }
 }
